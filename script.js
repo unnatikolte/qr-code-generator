@@ -1,20 +1,29 @@
-function generateQRCode() {
-  const input = document.getElementById("text-input").value;
-  const qrImage = document.getElementById("qr-code");
-  const loader = document.getElementById("loader");
-  const downloadLink = document.getElementById("download-link");
+const input = document.getElementById("text");
+const generateBtn = document.getElementById("generate");
+const qrCodeContainer = document.getElementById("qrcode");
+const loader = document.getElementById("loader");
+const downloadBtn = document.getElementById("download");
 
-  if (input.trim() === "") {
-    alert("Please enter a valid text or URL");
-    return;
-  }
+generateBtn.addEventListener("click", () => {
+  const value = input.value.trim();
+  if (!value) return;
 
-  const qrAPI = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(input)}&size=200x200`;
-
+  qrCodeContainer.innerHTML = "";
+  downloadBtn.style.display = "none";
   loader.classList.remove("hidden");
-  qrImage.onload = () => {
+
+  setTimeout(() => {
     loader.classList.add("hidden");
-    downloadLink.href = qrImage.src;
-  };
-  qrImage.src = qrAPI;
-}
+
+    QRCode.toDataURL(value, { width: 200, margin: 2 }, (err, url) => {
+      if (err) return console.error(err);
+
+      const img = new Image();
+      img.src = url;
+      qrCodeContainer.appendChild(img);
+
+      downloadBtn.href = url;
+      downloadBtn.style.display = "inline-block";
+    });
+  }, 1000); // Simulate loading
+});
