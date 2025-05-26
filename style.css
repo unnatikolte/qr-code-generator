@@ -28,21 +28,7 @@ input[type="text"] {
   border-radius: 4px;
 }
 
-button, #download {
-  display: inline-block;
-  background-color: #007BFF; /* Bootstrap primary blue */
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-#download {
-  background-color: #0056b3;
-}
 
 #qrcode {
   margin: 20px auto;
