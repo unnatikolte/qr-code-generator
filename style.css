@@ -79,3 +79,24 @@ button, #download {
     width: 100%;
   }
 }
+/* New: Button group container */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* Optional enhancement: Make buttons side-by-side on wider screens */
+@media screen and (min-width: 600px) {
+  .button-group {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  button, #download {
+    width: auto;
+  }
+}
+
