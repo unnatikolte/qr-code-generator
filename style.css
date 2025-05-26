@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -28,7 +29,7 @@ input[type="text"] {
 }
 
 button, #download {
- display: inline-block;
+  display: inline-block;
   background-color: #007BFF; /* Bootstrap primary blue */
   color: white;
   padding: 10px 20px;
@@ -79,6 +80,7 @@ button, #download {
     width: 100%;
   }
 }
+
 /* New: Button group container */
 .button-group {
   display: flex;
@@ -88,7 +90,7 @@ button, #download {
   margin-top: 15px;
 }
 
-/* Optional enhancement: Make buttons side-by-side on wider screens */
+/* Optional: Make buttons side-by-side on wider screens */
 @media screen and (min-width: 600px) {
   .button-group {
     flex-direction: row;
@@ -99,4 +101,3 @@ button, #download {
     width: auto;
   }
 }
-
